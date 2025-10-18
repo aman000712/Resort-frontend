@@ -3,8 +3,9 @@ import Image from "next/image";
 export default function BlogSection() {
   return (
     <div className="bg-gray-100 py-16 flex flex-col items-center justify-center h-lvh">
-     
-      <h2 className="text-4xl  font-bold mb-12 text-center">
+     <h1 className="text-[#B69100] tracking-widest uppercase">PROGRAMS</h1>
+      <h2 className="text-5xl mb-12 text-center"
+       style={{ fontFamily: "Times New Roman, Times, serif" }}>
         Aarambha Resort's Core Programs
       </h2>
 
