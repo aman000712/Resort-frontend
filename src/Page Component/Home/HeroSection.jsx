@@ -70,6 +70,7 @@ export default function Banner() {
                     showStatus={false}
                     infiniteLoop
                     showThumbs={false}
+                    animationHandler="fade" 
                     renderIndicator={false}
                     showArrows={false}
                 >
@@ -78,7 +79,7 @@ export default function Banner() {
                             return (
                                 <div key={index}>
                                     <div>
-                                        <img src={val.image} alt='xaina bak' className='w-screen h-screen object-cover' />
+                                        <img src={val.image} alt='' className='w-screen h-screen object-cover' />
                                     </div>
                                 </div>
                             )

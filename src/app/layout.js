@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       >
          <div className="fixed inset-0 -z-10">
           <Image
-            src="/blackbg.jpg"
+            src="/bg4.jpg"
             alt="Background"
             fill
             className="object-cover object-center"
