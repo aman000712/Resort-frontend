@@ -27,7 +27,7 @@ export default function AboutSection() {
         </div>
 
        
-        <div className='flex flex-col items-center text-center  text-white lg:grid lg:grid-cols-5 mt-12 gap-6'>
+        <div className='flex flex-col items-center   text-white lg:grid lg:grid-cols-5 mt-12 gap-6 '>
           
           <div>
             {inView && <CountUp start={0} end={50} className='text-3xl font-bold text-hora' />}

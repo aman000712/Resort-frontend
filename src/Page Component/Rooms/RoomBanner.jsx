@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function RoomBanner() {
     return(
         <div className="bg-transparent w-screen h-[60vh] flex items-center justify-center">
@@ -5,7 +7,9 @@ export default function RoomBanner() {
                 <div className="text-8xl  font-bold"
                     style={{ fontFamily: "Times New Roman, Times, serif" }}
             >Rooms</div>
-            <div className="underline text-white text-2xl">Home</div>
+        
+            <Link href={"/"} className="underline text-white text-2xl cursor-pointer hover:text-[#B69100]">Home</Link>
+
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ExploreRoom() {
   const images = [
     {
-      image: '/room1.jpg',
+      image: '/room3.jpg',
       title: "Deluxe King Room",
       description: "Spacious room with a king-sized bed, modern decor, city view, and complimentary breakfast.",
       cost: "$180 / night"
