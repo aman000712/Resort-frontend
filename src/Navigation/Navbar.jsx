@@ -36,7 +36,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
-    <div className={`w-screen z-10  text-white  flex items-center justify-center h-16 py-4  transition-all duration-300 ${isFixed ? "fixed top-0 left-0 h-20 border-none bg-gray-700 shadow-lg" : "relative"}`}>
+    <div className={`w-full z-10 overflow-hidden text-white  flex items-center justify-center h-16 py-4  transition-all duration-300 ${isFixed ? "fixed top-0 left-0 right-0 h-20 border-none bg-gray-700 shadow-lg" : "absolute"}`}>
       <div className="flex w-11/12  mt-2 lg:w-10/12 justify-between">
         <Image
           src={logo}

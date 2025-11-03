@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return (
-        <div className="w-full bg-gray-800 text-white py-10 h-[90vh]">
+        <div className="w-full bg-gray-800 text-white py-10 h-2/3">
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
              
                 <div className="flex flex-col gap-4">

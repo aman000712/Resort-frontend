@@ -51,7 +51,7 @@ export default function Testimony() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-18 gap-8 bg-white">
+    <section className="w-full flex flex-col items-center py-18 gap-8  bg-gray-100">
      <div className="flex flex-col items-center gap-2">
          <h1 className="text-red-800 tracking-widest uppercase">REVIEWS</h1>
       <h2 className="text-5xl mb-12 text-center"
@@ -64,9 +64,9 @@ export default function Testimony() {
         stories and satisfaction that make us proud to be their favorite getaway destination.
       </p>
      </div>
-    
 
-      <div className="w-11/12">
+
+      <div className="w-11/12 ">
         <Carousel
           arrows={false}
           autoPlay
@@ -105,7 +105,10 @@ export default function Testimony() {
             </div>
           ))}
         </Carousel>
+      
       </div>
     </section>
   );
 }
+
+

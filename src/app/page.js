@@ -10,20 +10,20 @@ import Testimony from "@/Page Component/Home/Testimony";
 import Vision from "@/Page Component/Home/Vision";
 import ExploreRoom from "@/Page Component/Rooms/ExploreRoom";
 
-export default function Home(){
-  return(
-    <div>
-    <HeroSection/>
-     <Vision/>
-     <ReasonToStay/>
-     <ExploreRoom/>
-     <AboutSection/>
-     <Testimony/>
-    <PoolVideo/>
-    <ActivitiesHighlight/>
-    <BlogSection/>
-    <Inquiry/>
-     <Gallery/>
-    </div>
+export default function Home() {
+  return (
+    <>
+      <HeroSection />
+      <Vision />
+      <ReasonToStay />
+      <AboutSection />
+      <ExploreRoom />
+      <Testimony />
+      <PoolVideo />
+      <ActivitiesHighlight />
+      <BlogSection />
+      <Inquiry />
+      <Gallery />
+    </>
   )
 }

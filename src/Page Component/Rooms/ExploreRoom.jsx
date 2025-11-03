@@ -44,7 +44,7 @@ export default function ExploreRoom() {
   return (
     <div className='bg-white h-auto flex flex-col justify-center items-center py-16 p-8'>
       <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-[#B69100] tracking-widest uppercase">Explore</h1>
+        <h1 className="text-red-800 tracking-widest uppercase">Explore</h1>
         <h2
           className="text-5xl text-center"
           style={{ fontFamily: "Times New Roman, Times, serif" }}
@@ -60,7 +60,7 @@ export default function ExploreRoom() {
               <div className={`flex flex-col ${i < 2 || (i > 3 && i < 6) ? "lg:order-first" : "lg:order-last"} justify-center items-start p-4 gap-3`}>
                 <div className='text-lg font-serif font-bold'>{val.title}</div>
                 <div className='text-gray-500'>{val.description}</div>
-                <div className='text-orange-500 text-3xl font-medium'>{val.cost}</div>
+                <div className='text-red-800 text-3xl font-medium'>{val.cost}</div>
               </div>
 
               <div className='h-64 overflow-hidden w-full'>

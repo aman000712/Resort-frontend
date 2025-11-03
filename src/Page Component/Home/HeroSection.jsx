@@ -14,10 +14,9 @@ export default function Banner() {
   ];
 
   return (
-    <section className="relative w-full h-lvh overflow-hidden">
-   
-      <div className="relative h-full w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-black/70 z-10"></div>
+ <section className="relative w-full min-h-screen ">
+ 
+  <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-black/70 z-10"></div>
 
         <Carousel
           autoPlay
@@ -33,7 +32,6 @@ export default function Banner() {
             <div key={index}>
               <img
                 src={val.image}
-                alt={`Slide ${index}`}
                 className="w-full h-screen object-cover"
               />
             </div>
@@ -52,7 +50,7 @@ export default function Banner() {
             BEST RESORT
           </h2>
         </div>
-      </div>
+      {/* </div> */}
 
   
       <div className="lg:absolute bottom-0 left-0 w-full px-4 md:px-12 py-10 z-30">

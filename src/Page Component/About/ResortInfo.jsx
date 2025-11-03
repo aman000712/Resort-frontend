@@ -1,44 +1,76 @@
 import Image from "next/image";
 import image from "../../../public/hotelview2.jpg";
+import { FaWifi, FaCoffee, FaPhone, FaParking, FaSnowflake } from "react-icons/fa";
+import { MdRoomService, MdBalcony, MdOutlineDryCleaning, MdElectricBolt } from "react-icons/md";
+import { TbAirConditioning, TbClock24 } from "react-icons/tb";
+import { IoMdSunny } from "react-icons/io";
+import { BiSolidDish } from "react-icons/bi";
 
 export default function ResortInfo() {
-    return (
-        <section className="bg-white py-16 flex items-center h-lvh justify-center">
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 w-10/12 max-w-6xl h-8/12 overflow-hidden ">
+  const amenities = [
+    { icon: <FaWifi className="text-yellow-700" />, name: "Wifi" },
+    { icon: <IoMdSunny className="text-yellow-700" />, name: "Wakeup Service" },
+    { icon: <MdOutlineDryCleaning className="text-yellow-700" />, name: "Tumble Dryer" },
+    { icon: <MdBalcony className="text-yellow-700" />, name: "Balcony" },
+    { icon: <MdRoomService className="text-yellow-700" />, name: "Room Service" },
+    { icon: <FaParking className="text-yellow-700" />, name: "Parking" },
+    { icon: <MdElectricBolt className="text-yellow-700" />, name: "Electric Kettle" },
+    { icon: <BiSolidDish className="text-yellow-700" />, name: "Dining Area" },
+    { icon: <FaCoffee className="text-yellow-700" />, name: "Tea/Coffee Maker" },
+    { icon: <FaPhone className="text-yellow-700" />, name: "Telephone" },
+    { icon: <TbAirConditioning className="text-yellow-700" />, name: "Air Conditioning" },
+    { icon: <TbClock24 className="text-yellow-700" />, name: "24-Hour Guest Reception" },
+  ];
 
-                <div className="relative w-full h-[400px] md:h-auto">
-                    <Image
-                        src={image}
-                        alt="Aarambha Hotel View"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                </div>
+  return (
+    <section className="bg-white py-20 flex flex-col items-center justify-center gap-14">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 w-10/12 max-w-6xl">
+    
+        <div className="relative w-full h-[30vh] md:h-auto">
+          <Image
+            src={image}
+            alt="Aarambha Hotel View"
+            className="object-cover h-[70vh] rounded-2xl shadow-lg"
+            priority
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col gap-6 justify-center p-6">
+          <h2
+            className="text-5xl text-red-800"
+            style={{ fontFamily: "Times New Roman, Times, serif" }}
+          >
+            Aarambha Hotel
+          </h2>
+
+          <p className="text-gray-700 leading-relaxed">
+            Nestled amidst the breathtaking beauty of nature, Arambha Resort is a sanctuary
+            for those seeking both relaxation and adventure. Located in the heart of Butwal,
+            we offer a unique blend of modern comfort and traditional charm. From the moment
+            you arrive, you are greeted with warm hospitality, serene surroundings, and the
+            gentle touch of mountain air.
+            <br />
+            <br />
+            Every corner of Arambha Resort reflects our commitment to quality, comfort, and
+            care. Whether you are here to indulge in a peaceful getaway or immerse yourself
+            in local culture, we ensure your experience is personalized to your needs.
+          </p>
+        </div>
+      </div>
 
 
-                <div className="flex flex-col gap-6 justify-center p-10 ">
-                    <h2
-                        className="text-5xl text-red-800"
-                        style={{ fontFamily: "Times New Roman, Times, serif" }}
-                    >
-                        Aarambha Hotel
-                    </h2>
-
-                    <p className="text-gray-600 leading-relaxed text-lg">
-                        Here's the text from the image you uploaded:
-
-                        ---
-
-                        Nestled amidst the breathtaking beauty of nature, Arambha Resort is a sanctuary for those seeking both relaxation and adventure. Located in the heart of Butwal, we offer a unique blend of modern comfort and traditional charm. From the moment you arrive, you are greeted with warm hospitality, serene surroundings, and the gentle touch of mountain air. Our resort is designed to be more than just a place to stay — it is a place where unforgettable memories are made.
-
-                        Every corner of Arambha Resort reflects our commitment to quality, comfort, and care. Whether you are here to indulge in a peaceful getaway, explore scenic hiking trails, or immerse yourself in local culture, we ensure your experience is personalized to your needs. With luxurious rooms, mouth-watering cuisine, and a wide range of activities, we invite you to escape the ordinary and embrace the magic of our mountain retreat.
-
-                        ---
-
-                    </p>
-                </div>
+      <div className="w-10/12 max-w-6xl">
+        <h3 className="text-3xl font-semibold mb-8 text-gray-800">Amenities</h3>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+          {amenities.map((val, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <span className="text-xl">{val.icon}</span>
+              <span>{val.name}</span>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

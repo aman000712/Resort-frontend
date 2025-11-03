@@ -31,10 +31,18 @@ export default function ActivitiesHighlight() {
   ];
 
   return (
-    <div className="w-full bg-white py-16 flex flex-col items-center justify-center">
-      <h2 className="text-3xl md:text-4xl font-semibold text-blue-600 mb-12">
-        Activities Highlight
-      </h2>
+    <div className="w-full bg-white py-16 flex gap-10 flex-col items-center justify-center">
+      <div className="flex flex-col gap-4 items-center justify-center">
+        <h1 className="text-red-800 tracking-widest uppercase">
+          Highlights
+        </h1>
+        <h2
+          className="text-5xl"
+          style={{ fontFamily: "Times New Roman, Times, serif" }}
+        >
+         Activities Highlights
+        </h2>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-10/12 mx-auto">
         {activities.map((activity, index) => (
@@ -42,7 +50,7 @@ export default function ActivitiesHighlight() {
             key={index}
             className="relative h-[450px] rounded-2xl overflow-hidden group shadow-lg"
           >
-            {/* Background Image */}
+          
             <Image
               src={activity.image}
               alt={activity.title}
