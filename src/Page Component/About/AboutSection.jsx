@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <div ref={ref} className='lg:h-lvh w-fit bg-transparent flex items-center justify-center gap-8 py-16'>
+    <div ref={ref} className='lg:h-lvh opacity-80 bg-black/50 w-fit flex items-center justify-center gap-8 py-16'>
       <div className='flex flex-col  items-center justify-center w-11/12 lg:w-3/5 '>
 
         <div className='flex flex-col lg:flex-row gap-12 lg:gap-0  w-full relative'>

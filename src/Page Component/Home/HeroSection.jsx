@@ -1,143 +1,117 @@
-"use client"
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+
+"use client";
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Banner() {
-    const images = [
-        {image: 'bg-2.webp' },
-        { image: 'pool.jpg' },
-        { image: 'hotelview2.jpg' },
-        { image: 'bg-2.webp' }
-    ];
+  const images = [
+    { image: "bg-2.webp" },
+    { image: "pool.jpg" },
+    { image: "hotelview2.jpg" },
+    { image: "bg-2.webp" },
+  ];
 
+  return (
+    <section className="relative w-full h-lvh overflow-hidden">
+   
+      <div className="relative h-full w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-black/70 z-10"></div>
 
-
-    const responsive = {
-        superLargeDesktop: {
-            
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
-
-
-    const foodItems = [
-        {
-            foodPic: 'fooditem1.jpg',
-            Title: 'Grilled Beef with Potatoes',
-            subTitle: 'Meat, Potatoes, Rice, Tomato'
-        },
-        {
-            foodPic: 'decoration.jpg',
-            Title: 'Grilled Beef with Potatoes',
-            subTitle: 'Meat, Potatoes, Rice, Tomato'
-        },
-        {
-            foodPic: 'room3.jpg',
-            Title: 'Grilled Beef with Potatoes',
-            subTitle: 'Meat, Potatoes, Rice, Tomato'
-        },
-        {
-            foodPic: 'food1.jpg',
-            Title: 'Grilled Beef with Potatoes',
-            subTitle: 'Meat, Potatoes, Rice, Tomato'
-        }
-    ];
-
-    return (
-        <div className='relative'>
-
-            <div className="relative h-screen w-full mx-auto">
-                <div className='absolute h-full w-full z-10 bg-gradient-to-r from-gray-950 via-transparent to-black opacity-55  object-cover  top-0 left-0'></div>
-
-
-                <Carousel
-                    responsive={responsive}
-                    autoPlay
-                    interval={5000}
-                    showStatus={false}
-                    infiniteLoop
-                    showThumbs={false}
-                    animationHandler="fade" 
-                    renderIndicator={false}
-                    showArrows={false}
-                >
-                    {
-                        images.map((val, index) => {
-                            return (
-                                <div key={index}>
-                                    <div>
-                                        <img src={val.image} alt='' className='w-screen h-screen object-cover' />
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </Carousel>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-                    <h1 className="text-8xl font-medium mb-4 font-cursive text-white"
-                     style={{ fontFamily: "Times New Roman, Times, serif" }} >Aarambha</h1>
-                    <h2 className="text-3xl">BEST RESORT</h2>
-                </div>
-
+        <Carousel
+          autoPlay
+          interval={5000}
+          showStatus={false}
+          infiniteLoop
+          showThumbs={false}
+          showIndicators={false}
+          showArrows={false}
+          animationHandler="fade"
+        >
+          {images.map((val, index) => (
+            <div key={index}>
+              <img
+                src={val.image}
+                alt={`Slide ${index}`}
+                className="w-full h-screen object-cover"
+              />
             </div>
+          ))}
+        </Carousel>
 
-            <div className='lg:absolute bg-gray-100 lg:bg-transparent bottom-0 w-full px-12  border-gray-900 py-10  text-white object-cover'>
-
-                <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl grid grid-cols-1 md:grid-cols-5 gap-6 p-6">
-                    
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-600 mb-2">Check-in</label>
-                        <input type="date" className="w-full border rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-yellow-500 outline-none" />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-600 mb-2">Check-out</label>
-                        <input type="date" className="w-full border rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-yellow-500 outline-none" />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-600 mb-2">Room</label>
-                        <select className="w-full border rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-yellow-500 outline-none">
-                            <option>Suite</option>
-                            <option>Deluxe</option>
-                            <option>Standard</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-600 mb-2">Guests</label>
-                        <select className="w-full border rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-yellow-500 outline-none">
-                            <option>1 Adult</option>
-                            <option>2 Adults</option>
-                            <option>Family</option>
-                        </select>
-                    </div>
-
-                    <div className="flex items-end">
-                        <button className="w-full bg-yellow-500 text-black font-bold py-3 rounded-lg shadow-md hover:bg-yellow-600 transition">
-                            Check Availability
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+     
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
+          <h1
+            className="text-7xl md:text-8xl font-bold  mb-4"
+            style={{ fontFamily: "Times New Roman, Times, serif" }}
+          >
+            Aarambha
+          </h1>
+          <h2 className="text-2xl md:text-3xl tracking-[0.2em] font-semibold text-white">
+            BEST RESORT
+          </h2>
         </div>
-    );
+      </div>
+
+  
+      <div className="lg:absolute bottom-0 left-0 w-full px-4 md:px-12 py-10 z-30">
+        <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 p-6">
+      
+          <div>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">
+              Check-in
+            </label>
+            <input
+              type="date"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-red-800 outline-none"
+            />
+          </div>
+
+      
+          <div>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">
+              Check-out
+            </label>
+            <input
+              type="date"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-red-800 outline-none"
+            />
+          </div>
+
+      
+          <div>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">
+              Room Type
+            </label>
+            <select className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-red-800 outline-none">
+              <option>Suite</option>
+              <option>Deluxe</option>
+              <option>Standard</option>
+            </select>
+          </div>
+
+         
+          <div>
+            <label className="block text-sm font-semibold text-gray-800 mb-2">
+              Guests
+            </label>
+            <select className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:ring-2 focus:ring-red-800 outline-none">
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>Family</option>
+            </select>
+          </div>
+
+       
+          <div className="flex items-end">
+            <button className="w-full bg-red-800 text-white font-bold rounded-lg py-3 shadow-md hover:bg-red-700 transition-all duration-200">
+              Check Availability
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
-
-
-
 

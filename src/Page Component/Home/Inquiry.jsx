@@ -3,7 +3,7 @@
 
 export default function Inquiry() {
   return (
-    <div className="relative w-screen h-[90vh] flex items-center justify-center text-white overflow-hidden">
+    <div className="relative w-screen h-[70vh] flex items-center justify-center text-white overflow-hidden">
      
     
 
@@ -17,8 +17,8 @@ export default function Inquiry() {
           If you have any queries or would like to make a reservation, please don’t hesitate to contact us.
         </p>
 
-        <button className="bg-[#B69100] cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-[#B69100] transition">
-          ENQUIRE NOW
+        <button className="bg-red-800 cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-[#B69100] transition">
+          BOOK NOW
         </button>
 
         <div className="mt-10 text-gray-300">

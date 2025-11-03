@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/Navigation/Footer";
-import Navbar from "@/Navigation/Navbar";
 import Image from "next/image";
+import MainNav from "@/Navigation/ManiNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,14 +27,14 @@ export default function RootLayout({ children }) {
       >
          <div className="fixed inset-0 -z-10">
           <Image
-            src="/blackbg.jpg"
+            src="/random.jpg"
             alt="Background"
             fill
             className="object-cover object-center"
             priority
           />
         </div>
-         <Navbar />
+         <MainNav />
        
         <main>{children}</main>
         <Footer/>

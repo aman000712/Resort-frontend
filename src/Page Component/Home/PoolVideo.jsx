@@ -2,9 +2,9 @@
 
 export default function PoolVideo() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <video
-        className="w-full h-full object-cover"
+        className="w-full h-[90vh] object-cover"
         src="/poolvideo.mp4" 
         autoPlay
         loop
@@ -17,7 +17,7 @@ export default function PoolVideo() {
 
 
       <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-serif">
-        Relax by the Pool
+        
       </div>
     </div>
   );

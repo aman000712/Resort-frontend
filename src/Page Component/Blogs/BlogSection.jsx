@@ -2,15 +2,17 @@ import Image from "next/image";
 
 export default function BlogSection() {
   return (
-    <div className="bg-gray-100 py-16 flex flex-col items-center justify-center h-lvh">
-     <h1 className="text-[#B69100] tracking-widest uppercase">PROGRAMS</h1>
+    <div className="bg-gray-100 py-16  items-center justify-center h-fit">
+    <div className=" flex flex-col items-center ">
+
+       <h1 className="text-[#B69100] tracking-widest uppercase">PROGRAMS</h1>
       <h2 className="text-5xl mb-12 text-center"
        style={{ fontFamily: "Times New Roman, Times, serif" }}>
         Aarambha Resort's Core Programs
       </h2>
 
     
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-11/12 md:w-9/12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-11/12 md:w-9/12 mt-16">
        
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
           <Image
@@ -71,6 +73,7 @@ export default function BlogSection() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
