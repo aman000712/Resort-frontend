@@ -4,7 +4,7 @@ export default function PoolVideo() {
   return (
     <div className="relative w-full overflow-hidden">
       <video
-        className="w-full h-[90vh] object-cover"
+        className="w-full h-[70vh] object-cover"
         src="/poolvideo.mp4" 
         autoPlay
         loop

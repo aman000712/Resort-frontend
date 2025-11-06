@@ -1,11 +1,13 @@
 import AboutSection from "@/Page Component/About/AboutSection";
-import BlogSection from "@/Page Component/Blogs/BlogSection";
+import BlogCategory from "@/Page Component/Blogs/BlogCategory";
+// import BlogSection from "@/Page Component/Blogs/BlogSection";
 import ActivitiesHighlight from "@/Page Component/Home/Activities";
 import Gallery from "@/Page Component/Home/Gallery";
 import HeroSection from "@/Page Component/Home/HeroSection";
 import Inquiry from "@/Page Component/Home/Inquiry";
 import PoolVideo from "@/Page Component/Home/PoolVideo";
 import ReasonToStay from "@/Page Component/Home/ReasonToStay";
+import ResortFAQ from "@/Page Component/Home/ResortFAQ";
 import Testimony from "@/Page Component/Home/Testimony";
 import Vision from "@/Page Component/Home/Vision";
 import ExploreRoom from "@/Page Component/Rooms/ExploreRoom";
@@ -21,8 +23,10 @@ export default function Home() {
       <Testimony />
       <PoolVideo />
       <ActivitiesHighlight />
-      <BlogSection />
+      <BlogCategory/>
+      {/* <BlogSection /> */}
       <Inquiry />
+      <ResortFAQ/>
       <Gallery />
     </>
   )

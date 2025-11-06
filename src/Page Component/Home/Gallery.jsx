@@ -14,14 +14,7 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="bg-white w-full py-16 flex flex-col items-center text-center">
-    
-      
-      <p className="text-gray-600 mb-2 text-base md:text-lg">
-        Visit <span className="font-semibold">@AarambhaResort</span> and{" "}
-        <span className="font-semibold">#AarambhaResort</span> to discover
-        unforgettable guest experiences at Aarambha Resort.
-      </p>
+    <div className="bg-white w-full py-16 flex flex-col gap-10 items-center text-center">
 
     
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-11/12 md:w-9/12">
@@ -31,9 +24,8 @@ export default function Gallery() {
               <Image
                 src={val.imgs}
                 alt="Gallery"
-                width={300}
-                height={300}
-                className="w-72 h-64 object-cover hover:scale-105 transition-transform duration-300"
+                
+                className="w-60 h-56 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <p className="text-gray-700 text-sm mt-3 tracking-widest flex items-center gap-1">
@@ -42,6 +34,11 @@ export default function Gallery() {
           </div>
         ))}
       </div>
+       <p className="text-gray-600 mb-2 text-base md:text-lg">
+        Visit <span className="font-semibold text-red-800">@AarambhaResort</span> and{" "}
+        <span className="font-semibold text-red-800">#AarambhaResort</span> to discover
+        unforgettable guest experiences at Aarambha Resort.
+      </p>
     </div>
   );
 }

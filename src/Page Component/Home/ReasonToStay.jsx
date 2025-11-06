@@ -33,10 +33,10 @@ export default function ReasonToStay() {
   ];
 
   return (
-    <div className="w-full bg-white py-16 flex flex-col gap-10 items-center justify-center">
-      <div className="flex flex-col gap-2 items-center justify-center">
-        <h1 className="text-red-800 tracking-widest uppercase">
-          STAY
+    <div className="w-full h-full bg-white flex flex-col py-20 gap-10  items-center justify-center">
+      <div className="flex flex-col  items-center justify-center">
+        <h1 className="text-red-800 tracking-wider font-semibold  capitalize">
+          Stay
         </h1>
         <h2
           className="text-5xl"
@@ -45,7 +45,7 @@ export default function ReasonToStay() {
           Your Perfect Stay, Our Promise
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-10/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3  py-10 gap-8 w-10/12 mx-auto">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -62,7 +62,7 @@ export default function ReasonToStay() {
 
             <Image
               src={card.hoverImage}
-
+              alt="hover image"
               fill
               className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
             />

@@ -46,8 +46,8 @@ export default function Banner() {
           >
             Aarambha
           </h1>
-          <h2 className="text-2xl md:text-3xl tracking-[0.2em] font-semibold text-white">
-            BEST RESORT
+          <h2 className="text-xl md:text-2xl tracking-[0.2em]  text-white">
+           Welcome to a World of Comfort.
           </h2>
         </div>
       {/* </div> */}
