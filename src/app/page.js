@@ -1,5 +1,6 @@
 import AboutSection from "@/Page Component/About/AboutSection";
 import BlogCategory from "@/Page Component/Blogs/BlogCategory";
+import BlogStories from "@/Page Component/Blogs/BlogStories";
 // import BlogSection from "@/Page Component/Blogs/BlogSection";
 import ActivitiesHighlight from "@/Page Component/Home/Activities";
 import Gallery from "@/Page Component/Home/Gallery";
@@ -26,6 +27,7 @@ export default function Home() {
       <BlogCategory/>
       {/* <BlogSection /> */}
       <Inquiry />
+      <BlogStories/>
       <ResortFAQ/>
       <Gallery />
     </>

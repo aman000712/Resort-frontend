@@ -1,63 +1,79 @@
 "use client";
 import Image from "next/image";
-import { FaArrowLeft, FaStar, FaWifi, FaTv, FaCoffee, FaSwimmingPool, FaBed } from "react-icons/fa";
+import { FaBed, FaUsers, FaExpand } from "react-icons/fa";
 import room1 from "../../../public/room1.jpg";
 import room2 from "../../../public/room2.jpg";
+import room3 from "../../../public/room3.jpg";
 
-export default function DeluxeRoom({ onBack }) {
+export default function DeluxeRoom() {
   return (
-    <div className="bg-white min-h-screen pb-20">
-      {/* Back Button */}
-      <button
-        onClick={onBack}
-        className="absolute top-6 left-6 bg-white text-black px-4 py-2 rounded-full flex items-center gap-2 hover:bg-gray-200 transition"
-      >
-        <FaArrowLeft /> Back
-      </button>
+    <div className="bg-[#f9f7f1] min-h-screen px-6 py-10">
+      {/* Top Section: Room Details + Booking Form */}
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+        {/* Left: Room Description */}
+        <div className="md:col-span-2 space-y-6">
+          <h1 className="text-4xl font-serif font-semibold">DELUXE TRIPLE ROOM</h1>
+          <p className="text-gray-700 leading-relaxed">
+            Our Deluxe Triple Rooms offer a comfortable and inviting space for double occupancy. 
+            With amenities like an LCD TV with 24-hour cable access, Wi-Fi, data port connectivity, 
+            a tea/coffee maker, and two complimentary bottles of water, guests can relax and enjoy 
+            their stay in a cozy environment. A warm welcome drink awaits guests upon arrival, 
+            setting the tone for a pleasant and memorable experience.
+          </p>
 
-      {/* Video Banner */}
-      <div className="relative w-full h-[500px]">
-        <video
-          src="/videos/deluxe.mp4"
-          autoPlay
-          loop
-          muted
-          className="object-cover w-full h-full brightness-75"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="text-5xl font-semibold tracking-wider">Deluxe Room</h1>
-          <p className="text-lg mt-2 text-gray-200">Luxury, comfort, and style redefined.</p>
+          <h2 className="font-semibold text-lg">Details</h2>
+          <div className="flex flex-wrap gap-6 mt-2 text-gray-700">
+            <div className="flex items-center gap-2">
+              <FaExpand /> <span>105mm²</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaUsers /> <span>up to 3 guests</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaBed /> <span>Double bed</span>
+            </div>
+          </div>
+        </div>
+
+       
+        <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
+          <h2 className="text-xl font-semibold border-b pb-2">YOUR STAY</h2>
+          <div className="flex flex-col gap-4 mt-4">
+            <input
+              type="text"
+              placeholder="Select Branch"
+              className="border border-gray-300 rounded-lg px-4 py-2"
+            />
+            <input
+              type="text"
+              placeholder="Select Date Range"
+              className="border border-gray-300 rounded-lg px-4 py-2"
+            />
+            <input
+              type="text"
+              placeholder="1 Adults, 0 Children, 1 Rooms"
+              className="border border-gray-300 rounded-lg px-4 py-2"
+            />
+            <button className="bg-[#6b5800] text-white rounded-lg py-2 mt-2 hover:bg-[#4d3e00] transition">
+              See Availability
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-6 mt-10 grid md:grid-cols-2 gap-10">
-        <div>
-          <h2 className="text-3xl font-semibold mb-4">Experience Pure Comfort</h2>
-          <p className="text-gray-600 leading-relaxed">
-            Our Deluxe Rooms offer a warm and modern atmosphere, complete with oak wood flooring and elegant finishes.
-            Perfect for both leisure and business travelers, each room features a king-sized bed, high-speed Wi-Fi,
-            flat-screen TV, mini-bar, and a private balcony overlooking the resort gardens.
-          </p>
-
-          <div className="flex items-center gap-6 mt-6">
-            <div className="text-yellow-500 flex gap-1">
-              <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
-            </div>
-            <p className="text-gray-500">(4.9/5 based on 237 reviews)</p>
-          </div>
-
-          <div className="mt-6 text-2xl text-[#B69100] font-semibold">Rs. 12,500 / Night</div>
-          <p className="mt-2 text-green-600 font-medium">Available Now</p>
-
-          <button className="mt-6 bg-[#B69100] text-white px-8 py-3 rounded-xl hover:bg-[#967a00] transition">
-            Book Now
-          </button>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
-          <Image src={room1} alt="Deluxe" className="rounded-xl object-cover" />
-          <Image src={room2} alt="Deluxe" className="rounded-xl object-cover" />
+      {/* Video / Image Gallery Section */}
+      <div className="max-w-6xl mx-auto mt-10">
+        <video
+          src="/videos/pool.mp4"
+          autoPlay
+          loop
+          muted
+          className="w-full h-[500px] object-cover rounded-xl mb-4"
+        />
+        <div className="grid grid-cols-3 gap-4">
+          <Image src={room1} alt="Room 1" className="rounded-lg object-cover" />
+          <Image src={room2} alt="Room 2" className="rounded-lg object-cover" />
+          <Image src={room3} alt="Room 3" className="rounded-lg object-cover" />
         </div>
       </div>
     </div>

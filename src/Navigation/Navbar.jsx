@@ -21,11 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const homePage = [
-  //   { title: "Deluxe", path: "/deluxe" },
-  //   { title: "Standard", path: "/standard" },
-  //   { title: "King", path: "/king" },
-  // ];
+
   const homePage = [
   { title: "Deluxe", path: "/blogs" },
   { title: "Standard", path: "/rooms/standard" },
@@ -37,6 +33,8 @@ export default function Navbar() {
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
     { title: "Rooms", path: "/rooms" },
+    { title: "Accomodation", path:"/accomodation"},
+    { title:"Events", path:"/events"},
     { title: "Blog", path: "/blogs" },
     { title: "Contact", path: "/contact" },
   ];
@@ -107,7 +105,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+   
       {isMenuOpen && (
         <div className="absolute top-16 right-4 w-64 bg-black bg-opacity-90 rounded-lg shadow-lg transition-all duration-300">
           <div className="flex flex-col items-center w-full gap-4 py-4 text-white">
