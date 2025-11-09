@@ -2,6 +2,8 @@
 
 "use client";
 
+
+import Link from "next/link";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -50,7 +52,7 @@ export default function Banner() {
            Welcome to a World of Comfort.
           </h2>
         </div>
-      {/* </div> */}
+    
 
   
       <div className="lg:absolute bottom-0 left-0 w-full px-4 md:px-12 py-10 z-30">
@@ -103,9 +105,9 @@ export default function Banner() {
 
        
           <div className="flex items-end">
-            <button className="w-full bg-red-800 text-white font-bold rounded-lg py-3 shadow-md hover:bg-red-700 transition-all duration-200">
+            <Link href="/accomodation" className="w-full bg-red-800 text-white text-center font-bold rounded-lg py-3 shadow-md hover:bg-red-700 transition-all duration-200">
               Check Availability
-            </button>
+            </Link>
           </div>
         </div>
       </div>

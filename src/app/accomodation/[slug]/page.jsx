@@ -26,6 +26,28 @@ const roomData = {
   },
 };
 
+// ✅ FACILITIES DATA (mapped like roomData)
+const facilitiesData = [
+  "Slipper",
+  "Shower",
+  "Tea | Coffee Maker",
+  "IDD Telephone",
+  "Daily Housekeeping",
+  "2 Bottle Water",
+  "Ironing (On Request)",
+  "Newspaper | Magazine",
+  "Mini Bar (Limited)",
+  "In Room Safe",
+  "Toiletries",
+  "High speed WIFI",
+  "Desk",
+  "Bathtub (Limited)",
+  "Hair Dryer (Limited)",
+  "Satellite | Cable TV",
+  "Seating Area",
+  "Air conditioner",
+];
+
 export default function RoomPage({ params }) {
   const { slug } = params;
   const room = roomData[slug];
@@ -35,50 +57,50 @@ export default function RoomPage({ params }) {
   }
 
   return (
-    <div className="bg-[#faf9f7] min-h-screen py-30">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
-        {/* Left Section */}
-        <div className="flex-1">
-          <Link href="/rooms" className="text-gray-500 hover:text-gray-700 mb-6 inline-block">
-            ← Back to Rooms
-          </Link>
-
-          <Image
-            src={room4}
-            alt={room.title}
-            width={900}
-            height={600}
-            className="rounded-xl mb-8"
-          />
-
+    <div className="w-full min-h-screen bg-gray-200 flex flex-col gap-8 items-center justify-center py-16 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl py-20 overflow-hidden">
+        {/* Room Info */}
+        <div className="p-10 flex flex-col justify-center">
           <h1
-            className="text-5xl font-semibold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-6 text-red-800"
             style={{ fontFamily: "Times New Roman, Times, serif" }}
           >
             {room.title}
           </h1>
-          <p className="text-gray-700 leading-relaxed text-lg mb-6">
+          <p className="text-gray-700 leading-relaxed text-lg mb-8">
             {room.description}
           </p>
 
-          <div className="mt-6 text-gray-700">
-            <h2 className="text-xl font-semibold mb-2">Details</h2>
-            <ul className="space-y-2">
-              <li>📏 {room.size}</li>
-              <li>👥 {room.guests}</li>
-              <li>🛏️ {room.bed}</li>
+          <div className="pt-6">
+            <h2 className="text-2xl font-semibold mb-3 text-red-800">
+              Room Details
+            </h2>
+            <ul className="space-y-2 text-gray-700">
+              {[
+                { label: "📏 Size", value: room.size },
+                { label: "👥 Guests", value: room.guests },
+                { label: "🛏️ Bed Type", value: room.bed },
+              ].map((detail, idx) => (
+                <li key={idx}>
+                  {detail.label}: {detail.value}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Right Sidebar – Booking Form */}
-        <div className="w-full lg:w-1/3 bg-white p-8 rounded-lg shadow-md h-fit">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Your Stay</h2>
+        {/* Booking Form */}
+        <div className="bg-white rounded-2xl shadow-lg p-10">
+          <h2 className="text-3xl font-semibold mb-8 text-center text-yellow-900">
+            Book Your Stay
+          </h2>
 
-          <form className="space-y-5">
+          <form className="space-y-6">
             <div>
-              <label className="block text-sm text-gray-600 mb-2">Select Branch</label>
-              <select className="w-full border border-gray-300 rounded-md p-3">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Select Branch
+              </label>
+              <select className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-red-800 focus:outline-none">
                 <option>Select Branch</option>
                 <option>Downtown</option>
                 <option>City View</option>
@@ -86,32 +108,114 @@ export default function RoomPage({ params }) {
             </div>
 
             <div>
-              <label className="block text-sm text-gray-600 mb-2">Select Date Range</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Date Range
+              </label>
               <input
                 type="text"
                 placeholder="Check-in - Check-out"
-                className="w-full border border-gray-300 rounded-md p-3"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-red-800 focus:outline-none"
               />
             </div>
 
             <div>
-              <label className="block text-sm text-gray-600 mb-2">Guests</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Guests
+              </label>
               <input
                 type="text"
                 placeholder="1 Adult, 0 Children"
-                className="w-full border border-gray-300 rounded-md p-3"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-red-800 focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-yellow-700 text-white py-3 rounded-md hover:bg-yellow-800 transition"
+              className="w-full bg-red-800 text-white py-3 rounded-lg font-medium hover:bg-red-900 transition"
             >
               See Availability
             </button>
           </form>
         </div>
       </div>
+
+      {/* ✅ FACILITIES SECTION (mapped from facilitiesData) */}
+      <section className="bg-white py-16 px-6 w-full">
+        <h2 className="text-4xl font-bold text-center text-red-800 mb-12">
+          FACILITIES
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-gray-700">
+          {facilitiesData.map((facility, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-start gap-3 border-b border-gray-200 pb-2"
+            >
+              <span className="text-red-800 text-2xl">★</span>
+              <span>{facility}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Video */}
+      <video
+        className="w-full h-[70vh] object-cover"
+        src="/poolvideo.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+
+    
+
+     {/* You May Also Like Section */}
+<div className="w-full bg-gray-100 py-16 px-8">
+  <h2 className="text-2xl font-semibold mb-10 text-gray-800">You may also like</h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    {Object.entries(roomData)
+      .filter(([key]) => key !== slug) 
+      .map(([key, value], idx) => (
+        <div
+          key={idx}
+          className="bg-white rounded-lg shadow-md hover:shadow-lg transition overflow-hidden"
+        >
+          <Image
+            src={room4}
+            alt={value.title}
+            className="w-full h-48 object-cover"
+          />
+
+          <div className="p-4">
+            <h3 className="text-lg font-semibold mb-2 text-red-800">
+              {value.title}
+            </h3>
+            <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+              {value.description}
+            </p>
+
+            <p className="text-red-700 font-semibold mb-3">
+              {value.size} • {value.guests}
+            </p>
+
+            <div className="flex items-center mb-3">
+              <span className="text-yellow-500 text-lg">★★★★★</span>
+            </div>
+
+            <Link
+              href={`/accomodation/${key}`}
+              className="text-white bg-red-800 px-4 py-2 rounded-md hover:bg-red-900 transition text-sm"
+            >
+              View This Room
+            </Link>
+          </div>
+        </div>
+      ))}
+  </div>
+</div>
+
     </div>
   );
 }

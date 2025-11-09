@@ -1,7 +1,24 @@
+"use client"
 
+import { useState } from "react";
+import ReservationForm from "./ReservationForm";
 
 
 export default function Inquiry() {
+  const [openForm, setOpenForm] = useState(false);
+
+  const handleButton = () => {
+    setOpenForm(true);
+  }
+
+  if(openForm){
+    return(
+      <ReservationForm
+       blured={() => setOpenForm(false)}
+                setOpenForm={setOpenForm}
+      />
+    )
+  }
   return (
     <div className="relative w-screen h-[70vh] flex items-center justify-center text-white overflow-hidden">
      
@@ -17,7 +34,8 @@ export default function Inquiry() {
           If you have any queries or would like to make a reservation, please don’t hesitate to contact us.
         </p>
 
-        <button className="bg-red-800 cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-[#B69100] transition">
+        <button onClick={handleButton}
+        className="bg-red-800 cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-[#B69100] transition">
           BOOK NOW
         </button>
 

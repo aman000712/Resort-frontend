@@ -35,7 +35,7 @@ export default function RoomDetails() {
   return (
     <div className="bg-white h-auto py-10">
       <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-[#B69100] tracking-widest uppercase">Explore</h1>
+        <h1 className="text-red-800 text-sm font-semibold tracking-widest uppercase">Explore</h1>
         <h2
           className="text-5xl text-center"
           style={{ fontFamily: "Times New Roman, Times, serif" }}
@@ -55,13 +55,13 @@ export default function RoomDetails() {
             <Image
               src={room.image}
               alt={room.name}
-              width={800}
+              width={500}
               height={500}
               className="rounded-xl"
             />
             <div className="flex flex-col gap-6 px-4 justify-center">
               <div
-                className="text-5xl"
+                className="text-5xl text-red-800"
                 style={{ fontFamily: "Times New Roman, Times, serif" }}
               >
                 {room.name}
@@ -74,7 +74,7 @@ export default function RoomDetails() {
              
               <Link
                 href={`/accomodation/${room.slug}`}
-                className="border border-gray-500 text-gray-500 w-fit px-4 py-2 hover:bg-gray-100 transition-all"
+                className="border border-gray-500 text-white hover:text-red-800 hover:border-2 hover:border-red-800 w-fit px-4 py-2 hover:bg-gray-100 bg-red-800  transition-all"
               >
                 View this room
               </Link>
