@@ -9,6 +9,13 @@ import img2b from "../../../public/room2.jpg";
 
 import img3a from "../../../public/fooditem1.jpg";
 import img3b from "../../../public/food1.jpg";
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 export default function ReasonToStay() {
   const cards = [
@@ -34,17 +41,24 @@ export default function ReasonToStay() {
 
   return (
     <div className="w-full h-full bg-white flex flex-col py-20 gap-10  items-center justify-center">
-      <div className="flex flex-col  items-center justify-center">
-        <h1 className="text-red-800 tracking-wider font-semibold  capitalize">
-          Stay
-        </h1>
-        <h2
-          className="text-5xl"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-          Your Perfect Stay, Our Promise
-        </h2>
-      </div>
+   
+
+
+         <div className="w-full relative flex flex-col items-center justify-center">
+      <h1
+        className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+      >
+     Stay
+      </h1>
+      <h2
+        className="text-4xl text-gray-600"
+        style={{ fontFamily: "Times New Roman, Times, serif" }}
+        
+      >
+       Your Perfect Stay, Our Promise
+      </h2>
+    </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3  py-10 gap-8 w-10/12 mx-auto">
         {cards.map((card, index) => (
           <div

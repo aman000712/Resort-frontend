@@ -1,8 +1,15 @@
 
 import { MdOutlineMessage } from 'react-icons/md';
+import { Great_Vibes } from "next/font/google";
+
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function BlogStories() {
-     const images = [
+    const images = [
         {
             image: '/marriage1.jpg',
             date: 'Sept 6, 2019 Admin',
@@ -26,11 +33,21 @@ export default function BlogStories() {
     return (
         <div className="flex flex-col bg-gray-100 items-center justify-center h-auto py-16">
 
-            <div className='flex flex-col items-center justify-center'>
-                <div className='font-bold text-red-800'>Stories</div>
-                <div
-                className="text-5xl"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}>Recent Blogs</div>
+
+
+            <div className="w-full relative flex flex-col items-center justify-center">
+                <h1
+                    className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+                >
+                    Stories
+                </h1>
+                <h2
+                    className="text-4xl text-gray-600"
+                    style={{ fontFamily: "Times New Roman, Times, serif" }}
+
+                >
+                    Recent Blogs
+                </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-8 gap-8 w-11/12 md:w-3/4 mx-auto">

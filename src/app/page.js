@@ -1,5 +1,5 @@
 import AboutSection from "@/Page Component/About/AboutSection";
-import BlogCategory from "@/Page Component/Blogs/BlogCategory";
+// import BlogCategory from "@/Page Component/Blogs/BlogCategory";
 import BlogStories from "@/Page Component/Blogs/BlogStories";
 // import BlogSection from "@/Page Component/Blogs/BlogSection";
 import ActivitiesHighlight from "@/Page Component/Home/Activities";
@@ -24,7 +24,7 @@ export default function Home() {
       <Testimony />
       <PoolVideo />
       <ActivitiesHighlight />
-      <BlogCategory/>
+      {/* <BlogCategory/> */}
       {/* <BlogSection /> */}
       <Inquiry />
       <BlogStories/>

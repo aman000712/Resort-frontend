@@ -26,7 +26,7 @@ export default function RoomDetails() {
       name: "Aarambha (Presidential) Suite King",
       slug: "presidential-suite-king",
       description:
-        "With a north-facing terrace area that’s perfect for outdoor lounging and dining, as well as an outdoor jacuzzi, you might be tempted to extend your stay indefinitely.",
+        "With a north-facing terrace area that's perfect for outdoor lounging and dining, as well as an outdoor jacuzzi, you might be tempted to extend your stay indefinitely.",
       total: 2,
       image: room4,
     },
@@ -57,7 +57,7 @@ export default function RoomDetails() {
               alt={room.name}
               width={500}
               height={500}
-              className="rounded-xl"
+               className="rounded-xl transition-transform duration-500 ease-in-out hover:scale-95"
             />
             <div className="flex flex-col gap-6 px-4 justify-center">
               <div

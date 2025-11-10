@@ -1,5 +1,11 @@
 "use client"
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function ExploreRoom() {
   const images = [
@@ -42,12 +48,18 @@ export default function ExploreRoom() {
   ];
 
   return (
-    <div className='bg-white h-auto flex flex-col justify-center items-center py-16 p-8'>
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-red-800 tracking-widest uppercase">Explore</h1>
+    <div className='bg-white h-full flex flex-col justify-center items-center py-22 p-8'>
+
+      <div className="w-full relative flex flex-col items-center justify-center">
+        <h1
+          className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+        >
+          Explore
+        </h1>
         <h2
-          className="text-5xl text-center"
+          className="text-4xl text-gray-600"
           style={{ fontFamily: "Times New Roman, Times, serif" }}
+
         >
           Hotel Master's Rooms
         </h2>

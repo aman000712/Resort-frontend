@@ -5,8 +5,19 @@ import img1 from "../../../public/decoration.jpg";
 import img2 from "../../../public/blackbg.jpg";
 import img3 from "../../../public/pool.jpg";
 import img4 from "../../../public/bg.jpg";
+import { useState } from "react";
+import { Great_Vibes } from "next/font/google";
+
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+
 
 export default function ActivitiesHighlight() {
+  const [showMore, setShowMore] = useState(false);
   const activities = [
     {
       image: img1,
@@ -30,19 +41,30 @@ export default function ActivitiesHighlight() {
     },
   ];
 
+  const handleButton = () => {
+    setShowMore(true);
+  }
+  
+
   return (
     <div className="w-full bg-white py-16 flex gap-10 flex-col items-center justify-center">
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-red-800 tracking-widest uppercase">
-          Highlights
-        </h1>
-        <h2
-          className="text-5xl"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-         Activities Highlights
-        </h2>
-      </div>
+      
+
+          <div className="w-full relative flex flex-col items-center justify-center">
+      <h1
+        className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-600 -top-6 lg:-top-10 italic`}
+      >
+      Highlights
+      </h1>
+      <h2
+        className="text-4xl text-gray-600"
+        style={{ fontFamily: "Times New Roman, Times, serif" }}
+        
+      >
+        Activities Highlights
+      </h2>
+    </div>
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-10/12 mx-auto">
         {activities.map((activity, index) => (
@@ -58,12 +80,13 @@ export default function ActivitiesHighlight() {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            {/* Overlay (appears on hover) */}
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center text-center text-white px-4">
+       
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col gap-4 items-center justify-center text-center text-white px-4">
               <h3 className="text-2xl font-semibold mb-2">
                 {activity.title}
               </h3>
               <p className="text-sm leading-relaxed">{activity.desc}</p>
+              <button className="w-fit h-fit py-2 px-3 border-1 border-white cursor-pointer">view more</button>
             </div>
           </div>
         ))}

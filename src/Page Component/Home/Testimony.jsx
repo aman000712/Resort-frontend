@@ -6,6 +6,14 @@ import hum2 from "../../../public/Person2.jpg";
 import hum3 from "../../../public/Person5.jpg";
 import hum4 from "../../../public/Person4.jpg";
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
+
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 export default function Testimony() {
   const testimonials = [
@@ -52,18 +60,23 @@ export default function Testimony() {
 
   return (
     <section className="w-full flex flex-col items-center py-18 gap-8  bg-gray-100">
-     <div className="flex flex-col items-center gap-2">
-         <h1 className="text-red-800 tracking-widest uppercase">REVIEWS</h1>
-      <h2 className="text-5xl mb-12 text-center"
-       style={{ fontFamily: "Times New Roman, Times, serif" }}>
-       Customer's Review
+
+       <div className="w-full relative flex flex-col items-center justify-center">
+      <h1
+        className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+      >
+      Reviews
+      </h1>
+      <h2
+        className="text-4xl text-gray-600"
+        style={{ fontFamily: "Times New Roman, Times, serif" }}
+        
+      >
+        Customer's Review
       </h2>
-        <p className="text-center text-lg text-gray-700 w-11/12 sm:w-3/4">
-        Hear what our guests have to say about their unforgettable experiences at our resort.
-        From breathtaking views to exceptional service, our customers share their genuine
-        stories and satisfaction that make us proud to be their favorite getaway destination.
-      </p>
-     </div>
+    </div>
+
+
 
 
       <div className="w-11/12 ">

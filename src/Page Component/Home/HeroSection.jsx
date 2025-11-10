@@ -48,14 +48,17 @@ export default function Banner() {
           >
             Aarambha
           </h1>
-          <h2 className="text-xl md:text-2xl tracking-[0.2em]  text-white">
-           Welcome to a World of Comfort.
+          <h2 className="text-sm md:text-xl tracking-wider md:font-medium font-semibold text-white">
+           Welcome to a World of <span className="text-red-500">
+            Comfort
+           </span>
+           .
           </h2>
         </div>
     
 
   
-      <div className="lg:absolute bottom-0 left-0 w-full px-4 md:px-12 py-10 z-30">
+      <div className="lg:absolute bottom-0 left-0 w-full px-4 md:px-12 py-22 z-30">
         <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 p-6">
       
           <div>
@@ -105,7 +108,7 @@ export default function Banner() {
 
        
           <div className="flex items-end">
-            <Link href="/accomodation" className="w-full bg-red-800 text-white text-center font-bold rounded-lg py-3 shadow-md hover:bg-red-700 transition-all duration-200">
+            <Link href="/accomodation" className="w-full bg-red-800 text-white text-center font-bold rounded-lg py-3 shadow-md hover:bg-red-700 transition-all duration-200  bg-gradient-to-r from-black via-black/20 to-black/70">
               Check Availability
             </Link>
           </div>

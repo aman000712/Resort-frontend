@@ -27,6 +27,13 @@ import meet1 from "../../../public/meeting1.jpg";
 import meet2 from "../../../public/meeting2.jpg";
 import meet3 from "../../../public/meeting3.jpg";
 import meet4 from "../../../public/meeting4.jpg";
+import { Great_Vibes } from "next/font/google";
+
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export default function BlogCategory() {
   const [selectedCategory, setSelectedCategory] = useState("Marriage");
@@ -44,17 +51,24 @@ export default function BlogCategory() {
   const imagesToDisplay = categories[selectedCategory];
 
   return (
-    <div className="w-full min-h-lvh bg-white flex flex-col gap-10 items-center py-10">
+    <div className="w-full min-h-lvh bg-white flex flex-col gap-10 items-center py-16">
     
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-red-800 tracking-widest uppercase">EVENTS</h1>
-        <h2
-          className="text-5xl"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-          Categories of Events
-        </h2>
-      </div>
+    
+
+   <div className="w-full relative flex flex-col items-center justify-center">
+      <h1
+        className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+      >
+     Gallery
+      </h1>
+      <h2
+        className="text-4xl text-gray-600"
+        style={{ fontFamily: "Times New Roman, Times, serif" }}
+        
+      >
+       Photo's Collection
+      </h2>
+    </div>
 
       <div className="flex gap-8 text-lg font-semibold text-red-800">
         {Object.keys(categories).map((cat) => (

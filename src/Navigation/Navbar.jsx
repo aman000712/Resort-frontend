@@ -32,10 +32,10 @@ export default function Navbar() {
   const Page = [
     { title: "Home", path: "/" },
     { title: "About", path: "/about" },
-    { title: "Rooms", path: "/rooms" },
     { title: "Accomodation", path:"/accomodation"},
     { title:"Events", path:"/events"},
     { title: "Blog", path: "/blogs" },
+    { title: "Gallery", path:"/gallery"},
     { title: "Contact", path: "/contact" },
   ];
 
