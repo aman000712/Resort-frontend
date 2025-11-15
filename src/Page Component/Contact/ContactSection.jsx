@@ -118,13 +118,13 @@ export default function Contact() {
   const contact = [
     {
       logo: <FaLocationArrow />,
-      title: "Sukkhanagar Butwal-8, Rupandehi, Nepal",
+      title: "Dhawaha Butwal-15, Rupandehi, Nepal",
     },
     {
       logo: <IoIosCall />,
       title: "071562537, 9857034838, 9857043464, 9846970252",
     },
-    { logo: <MdEmail />, title: "info@globalschool.edu.np" },
+    { logo: <MdEmail />, title: "aarambharesort@gmail.com" },
   ];
 
   const validationSchema = Yup.object({
@@ -144,11 +144,12 @@ export default function Contact() {
   });
 
   return (
-    <div className="h-full bg-gray-100 py-12 w-full flex flex-col justify-center">
-      <div className="flex flex-col md:flex-row  py-12 gap-12 mx-auto w-11/12 h-full">
-        {/* Form Section */}
+    <div className="h-full bg-gray-100 py-12 w-full flex flex-col items-center justify-center">
+      <div className="flex flex-col md:flex-row  py-12 gap-12 mx-auto w-10/12 h-full">
+       
         <div className=" gap-6  rounded-md w-full md:w-1/2">
-          <h1 className="text-3xl font-serif font-semibold pb-3 text-red-800">
+          <h1 className="text-3xl  font-semibold pb-3 text-red-800"
+          style={{ fontFamily: "Times New Roman, Times, serif" }}>
             Send us a message
           </h1>
           <Formik
@@ -172,7 +173,7 @@ export default function Contact() {
                       className={`w-full resize-none border text-sm p-2 mt-2 rounded-md focus:outline-none focus:ring-2 ${
                         errors[field.name] && touched[field.name]
                           ? "border-red-500 focus:ring-red-500"
-                          : "border-gray-300 focus:ring-orange-500"
+                          : "border-gray-400 focus:ring-blue-400"
                       }`}
                     />
                     <ErrorMessage
@@ -208,7 +209,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="md:w-1/2 w-full h-full">
+        <div className="md:w-1/2 w-full h-full ">
           <div className=" w-9/10 h-96 flex flex-col text-red-800 justify-center items-start gap-7 mx-auto py-12 px-6">
             <div className="text-4xl font-medium">Contact Information</div>
             {contact.map((val, i) => (
@@ -224,7 +225,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="w-full object-cover  h-[100vh]  px-12">
+      <div className="w-10/12 shadow-2xl shadow-red-100 object-cover  h-[70vh]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3532.8658961844417!2d83.45987317491965!3d27.690539376192216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1762065893461!5m2!1sen!2snp"
           className="h-full w-full border-0 rounded-md"

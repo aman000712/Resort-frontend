@@ -13,37 +13,43 @@ export default function ExploreRoom() {
       image: '/room3.jpg',
       title: "Deluxe King Room",
       description: "Spacious room with a king-sized bed, modern decor, city view, and complimentary breakfast.",
-      cost: "$180 / night"
+       cost: "Rs. 3000",
+      time:"/night"
     },
     {
       image: '/room2.jpg',
       title: "Executive Suite",
       description: "Luxurious suite featuring a private lounge area, balcony, and access to the executive club.",
-      cost: "$250 / night"
+      cost: "Rs. 3000",
+      time:"/night"
     },
     {
       image: '/room3.jpg',
       title: "Family Room",
       description: "Perfect for families, offering two queen beds, a large seating area, and a scenic pool view.",
-      cost: "$210 / night"
+      cost: "Rs. 3000",
+      time:"/night"
     },
     {
       image: '/room4.jpg',
       title: "Ocean View Room",
       description: "Enjoy breathtaking ocean views from this elegant room with a private balcony and cozy interiors.",
-      cost: "$230 / night"
+       cost: "Rs. 3000",
+      time:"/night"
     },
     {
       image: '/room3.jpg',
       title: "Presidential Suite",
       description: "The ultimate luxury experience with a private jacuzzi, dining area, and panoramic city views.",
-      cost: "$480 / night"
+      cost: "Rs. 3000",
+      time:"/night"
     },
     {
       image: '/room4.jpg',
       title: "Standard Twin Room",
       description: "Comfortable and affordable option with twin beds, modern bathroom, and all essential amenities.",
-      cost: "$140 / night"
+      cost: "Rs. 3000",
+      time:"/night"
     },
   ];
 
@@ -57,7 +63,7 @@ export default function ExploreRoom() {
           Explore
         </h1>
         <h2
-          className="text-4xl text-gray-600"
+          className="text-4xl text-gray-400"
           style={{ fontFamily: "Times New Roman, Times, serif" }}
 
         >
@@ -72,7 +78,10 @@ export default function ExploreRoom() {
               <div className={`flex flex-col ${i < 2 || (i > 3 && i < 6) ? "lg:order-first" : "lg:order-last"} justify-center items-start p-4 gap-3`}>
                 <div className='text-lg font-serif font-bold'>{val.title}</div>
                 <div className='text-gray-500'>{val.description}</div>
-                <div className='text-red-800 text-3xl font-medium'>{val.cost}</div>
+                <div className="flex items-center justify-center gap-2">
+                <div className='text-red-800 text-2xl font-medium'>{val.cost}</div>
+                <div className="text-red-800 text-sm">{val.time}</div>
+                </div>
               </div>
 
               <div className='h-64 overflow-hidden w-full'>

@@ -36,15 +36,7 @@ export default function Vision() {
       </div> */}
 
 
-       {/* <div className='w-full relative flex flex-col items-center justify-center '>
-            <h1 className='lg:text-8xl text-6xl  absolute -top-6 lg:-top-14 '>Meet Our Chefs</h1>
-             <h2
-          className="text-5xl"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-          A New Vision of Luxury Hotel
-        </h2>
-        </div> */}
+    
 
          <div className="w-full relative flex flex-col items-center justify-center">
       <h1
@@ -53,7 +45,7 @@ export default function Vision() {
        Welcome 
       </h1>
       <h2
-        className="text-4xl text-gray-600"
+        className="text-4xl text-gray-400"
         style={{ fontFamily: "Times New Roman, Times, serif" }}
         
       >

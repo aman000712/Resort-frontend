@@ -1,5 +1,5 @@
 import AboutBanner from "@/Page Component/About/AboutBanner";
-import AboutSection from "@/Page Component/About/AboutSection";
+import ChairmainWords from "@/Page Component/About/ChairmanWords";
 import ResortInfo from "@/Page Component/About/ResortInfo";
 import ActivitiesHighlight from "@/Page Component/Home/Activities";
 import ResortFAQ from "@/Page Component/Home/ResortFAQ";
@@ -11,7 +11,8 @@ export default function About(){
             <AboutBanner/>
             <Vision/>
             <ResortInfo/>
-            <AboutSection/>
+            <ChairmainWords/>
+            
             <ActivitiesHighlight/>
             <ResortFAQ/>
             

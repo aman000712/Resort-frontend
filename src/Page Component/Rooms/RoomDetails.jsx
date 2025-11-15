@@ -3,6 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import room4 from "../../../public/room4.jpg";
+import { Great_Vibes } from "next/font/google";
+
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 export default function RoomDetails() {
   const rooms = [
@@ -33,16 +41,23 @@ export default function RoomDetails() {
   ];
 
   return (
-    <div className="bg-white h-auto py-10">
-      <div className="flex flex-col gap-4 items-center justify-center">
-        <h1 className="text-red-800 text-sm font-semibold tracking-widest uppercase">Explore</h1>
-        <h2
-          className="text-5xl text-center"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-          Hotel Master's Rooms
-        </h2>
-      </div>
+    <div className="bg-white h-auto py-22">
+     
+
+         <div className="w-full relative flex flex-col items-center justify-center">
+      <h1
+        className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
+      >
+       Explore 
+      </h1>
+      <h2
+        className="text-4xl text-gray-600"
+        style={{ fontFamily: "Times New Roman, Times, serif" }}
+        
+      >
+       Hotel Master's Rooms
+      </h2>
+    </div>
 
       <div className="flex flex-col gap-20 w-9/12 mx-auto mt-20 py-10">
         {rooms.map((room, index) => (

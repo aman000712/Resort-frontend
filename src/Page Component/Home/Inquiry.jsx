@@ -20,7 +20,7 @@ export default function Inquiry() {
     )
   }
   return (
-    <div className="relative w-screen h-[70vh] flex items-center justify-center text-white overflow-hidden">
+    <div className="relative w-screen h-[60vh] flex items-center justify-center text-white overflow-hidden">
      
     
 
@@ -35,7 +35,7 @@ export default function Inquiry() {
         </p>
 
         <button onClick={handleButton}
-        className="bg-red-800 cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-[#B69100] transition">
+        className="bg-red-800 cursor-pointer text-white font-semibold px-8 py-3 rounded-md shadow-md hover:bg-gray-200 hover:text-red-800 transition">
           BOOK NOW
         </button>
 

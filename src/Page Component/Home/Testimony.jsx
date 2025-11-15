@@ -59,16 +59,16 @@ export default function Testimony() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-18 gap-8  bg-gray-100">
+    <section className="w-full flex flex-col items-center  h-full pt-22 py-10 justify-center gap-8  bg-gray-100">
 
-       <div className="w-full relative flex flex-col items-center justify-center">
+       <div className="w-full relative flex  flex-col items-center justify-center">
       <h1
         className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
       >
       Reviews
       </h1>
       <h2
-        className="text-4xl text-gray-600"
+        className="text-4xl text-gray-400"
         style={{ fontFamily: "Times New Roman, Times, serif" }}
         
       >
@@ -81,7 +81,7 @@ export default function Testimony() {
 
       <div className="w-11/12 ">
         <Carousel
-          arrows={false}
+          arrows={true}
           autoPlay
           autoPlaySpeed={1500}
           infinite

@@ -27,11 +27,11 @@ export default function AboutSection() {
         </div>
 
        
-        <div className='flex flex-col items-center   text-white lg:grid lg:grid-cols-5 mt-12 gap-6 '>
+        <div className='flex flex-col items-center    text-slate-50 lg:grid lg:grid-cols-5 mt-12 gap-6 '>
           
           <div>
             {inView && <CountUp start={0} end={50} className='text-3xl font-bold text-hora' />}
-            <div className='text-sm font-thin text-white'>MENUS/DISH</div>
+            <div className='text-sm font-thin text-slate-50'>MENUS/DISH</div>
           </div>
           <div>
             {inView && <CountUp start={0} end={20} className='text-3xl font-bold text-hora' />}
