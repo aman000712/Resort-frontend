@@ -8,18 +8,18 @@ import { BiSolidDish } from "react-icons/bi";
 
 export default function ResortInfo() {
   const amenities = [
-    { icon: <FaWifi className="text-yellow-700" />, name: "Wifi" },
-    { icon: <IoMdSunny className="text-yellow-700" />, name: "Wakeup Service" },
-    { icon: <MdOutlineDryCleaning className="text-yellow-700" />, name: "Tumble Dryer" },
-    { icon: <MdBalcony className="text-yellow-700" />, name: "Balcony" },
-    { icon: <MdRoomService className="text-yellow-700" />, name: "Room Service" },
-    { icon: <FaParking className="text-yellow-700" />, name: "Parking" },
-    { icon: <MdElectricBolt className="text-yellow-700" />, name: "Electric Kettle" },
-    { icon: <BiSolidDish className="text-yellow-700" />, name: "Dining Area" },
-    { icon: <FaCoffee className="text-yellow-700" />, name: "Tea/Coffee Maker" },
-    { icon: <FaPhone className="text-yellow-700" />, name: "Telephone" },
-    { icon: <TbAirConditioning className="text-yellow-700" />, name: "Air Conditioning" },
-    { icon: <TbClock24 className="text-yellow-700" />, name: "24-Hour Guest Reception" },
+    { icon: <FaWifi/>, name: "Wifi" },
+    { icon: <IoMdSunny/>, name: "Wakeup Service" },
+    { icon: <MdOutlineDryCleaning />, name: "Tumble Dryer" },
+    { icon: <MdBalcony />, name: "Balcony" },
+    { icon: <MdRoomService />, name: "Room Service" },
+    { icon: <FaParking />, name: "Parking" },
+    { icon: <MdElectricBolt />, name: "Electric Kettle" },
+    { icon: <BiSolidDish />, name: "Dining Area" },
+    { icon: <FaCoffee />, name: "Tea/Coffee Maker" },
+    { icon: <FaPhone/>, name: "Telephone" },
+    { icon: <TbAirConditioning />, name: "Air Conditioning" },
+    { icon: <TbClock24 c />, name: "24-Hour Guest Reception" },
   ];
 
   return (
@@ -61,11 +61,11 @@ export default function ResortInfo() {
 
 
       <div className="w-10/12 max-w-6xl">
-        <h3 className="text-3xl font-semibold mb-8 text-gray-800">Amenities</h3>
+        <h3 className="text-3xl font-semibold mb-8 text-red-800">Amenities</h3>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
           {amenities.map((val, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className="text-xl">{val.icon}</span>
+              <span className="text-xl text-red-800">{val.icon}</span>
               <span>{val.name}</span>
             </div>
           ))}

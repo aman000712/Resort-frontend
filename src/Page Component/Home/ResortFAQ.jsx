@@ -53,7 +53,7 @@ export default function ResortFAQ() {
 
           <div className="w-full lg:w-1/2 flex items-center justify-center">
             <div className="rounded-3xl p-6 md:p-8 text-white w-full max-w-lg">
-              <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center font-serif text-amber-300">
+              <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center font-serif text-white">
                 Frequently Asked Questions
               </h1>
 
@@ -67,17 +67,17 @@ export default function ResortFAQ() {
                       onClick={() =>
                         setOpenIndex(openIndex === index ? null : index)
                       }
-                      className="flex justify-between items-center w-full text-left font-semibold text-lg py-2 hover:text-amber-300 transition-colors"
+                      className="flex justify-between items-center w-full text-left font-semibold text-lg py-2 hover:text-red-300 transition-colors"
                     >
                       <span className="text-white pr-4">{faq.question}</span>
                       {openIndex === index ? (
-                        <IoChevronUp className="text-2xl text-amber-400 flex-shrink-0" />
+                        <IoChevronUp className="text-2xl text-red-400 flex-shrink-0" />
                       ) : (
-                        <IoChevronDown className="text-2xl text-amber-400 flex-shrink-0" />
+                        <IoChevronDown className="text-2xl text-red-400 flex-shrink-0" />
                       )}
                     </button>
 
-                    {/* Smooth dropdown */}
+               
                     <div
                       className={`transition-all duration-500 ease-in-out overflow-hidden ${
                         openIndex === index

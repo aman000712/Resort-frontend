@@ -80,7 +80,7 @@ export default function Testimony() {
 
 
       <div className="w-11/12 ">
-        <Carousel
+        <Carousel 
           arrows={true}
           autoPlay
           autoPlaySpeed={1500}
@@ -90,7 +90,7 @@ export default function Testimony() {
           swipeable
           pauseOnHover
           keyBoardControl
-          className="w-full"
+          className="w-full z-0"
           slidesToSlide={1}
         >
           {testimonials.map((val, i) => (

@@ -1,18 +1,29 @@
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
-export default function ContactBanner() {
-    return (
-        <div className=" opacity-80 bg-black/50  w-screen h-[60vh] flex items-center justify-center">
-            <div className="flex flex-col gap-2 items-center  text-white justify-center">
-                <div className="text-8xl  font-bold"
-                    style={{ fontFamily: "Times New Roman, Times, serif" }}
-                >Contact</div>
-                <div className="flex  items-center justify-center gap-4">
-                    <Link href={"/"} className=" text-white text-xl cursor-pointer hover:text-[#B69100]">Home</Link>
-                    <div> / </div>
-                    <div className="underline text-xl">Contact</div>
-                </div>
-            </div>
-        </div>
-    )
+export default function AboutBanner() {
+  return (
+    <div className="relative w-screen h-[70vh]">
+     
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white gap-4 px-5">
+        <h1 className="text-5xl md:text-6xl font-bold">Contact</h1>
+        <p className="max-w-lg text-sm md:text-base">
+          For over a century, we've been committed to academic excellence, innovation, and student success.
+        </p>
+      </div>
+
+     
+      <div className="absolute bg-black/50 w-full p-2 bottom-0 pl-28 flex items-center gap-2 text-white text-sm md:text-md">
+        <FaArrowLeft />
+        <Link href="/" className="hover:underline">
+          Home
+        </Link>
+        <span>/</span>
+        <span className="underline underline-offset-2">Contact</span>
+      </div>
+    </div>
+  );
 }

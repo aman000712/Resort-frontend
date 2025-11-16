@@ -19,7 +19,7 @@ export default function RoomDetails() {
       slug: "deluxe-room",
       description:
         "Feel right at home in our cosy 33.5m2 standard rooms with oak wood flooring and modern-yet-simple finishes.",
-      total: 28,
+      total: 2,
       image: room4,
     },
     {
@@ -27,7 +27,7 @@ export default function RoomDetails() {
       slug: "deluxe-suite-room",
       description:
         "Our deluxe rooms offer a stylish place to stay that doesn’t compromise on comfort and quality.",
-      total: 16,
+      total: 3,
       image: room4,
     },
     {
@@ -83,7 +83,7 @@ export default function RoomDetails() {
               </div>
               <div className="text-gray-500">{room.description}</div>
               <div className="text-gray-500 font-semibold">
-                Total No. of Rooms: {room.total}
+                Total No. of Beds: {room.total}
               </div>
 
              

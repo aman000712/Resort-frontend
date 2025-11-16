@@ -46,7 +46,7 @@ export default function BlogPage({ params }) {
   }
 
   return (
-    <div className="bg-gray-100 py-16 flex flex-col items-center">
+    <div className="bg-gray-100 py-30 justify-center flex flex-col items-center">
       <div className="w-10/12 md:w-8/12 bg-white shadow-xl rounded-2xl overflow-hidden">
         <Image
           src={blog.image}
