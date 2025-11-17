@@ -12,13 +12,13 @@ export default function SemiNavBar() {
         <div>+1235 2355 98</div>
       </div>
 
+
+      <div className="tracking-wider">Open hours:Monday-Sunday 8:00AM-9:00PM</div>
+
       <div className='flex gap-1 items-center'>
         <div><SiMinutemailer /></div>
         <div>youremail@email.com</div>
       </div>
-
-      <div>Open hours:Monday-Sunday 8:00AM-9:00PM</div>
-
      </div>
     </div>
   )

@@ -43,7 +43,7 @@ export default function Navbar() {
     <div
       className={`w-full z-10 text-white flex items-center justify-center h-16 py-12 transition-all duration-300 ${
         isFixed
-          ? "fixed top-0 left-0 right-0 h-20 bg-red-800 shadow-lg"
+          ? "fixed top-0 left-0 right-0 h-20 bg-white  shadow-lg "
           : "absolute"
       }`}
     >
@@ -88,7 +88,7 @@ export default function Navbar() {
                   )}
                 </div>
               ) : (
-                <Link href={val.path} className="hover:text-red-800 transition">
+                <Link href={val.path} className={`hover:text-red-800  transition ${isFixed ? "text-black" : "text-white"}`}>
                   {val.title}
                 </Link>
               )}

@@ -149,7 +149,7 @@ export default function RoomPage({ params }) {
 
 
 
-  const { slug } = React.use(params);
+  const { slug } = params;
   const room = roomData[slug];
 
 
@@ -209,7 +209,7 @@ export default function RoomPage({ params }) {
                   <Image
                     src={val.image}
                     alt="here"
-                    className="object-cover w-64 h-64"
+                    className={`object-cover ${i === 0 || i === 1 || i === 2 ? "w-98 h-98" : ""} ${i === 3  ? "w-10" : ""} `}
                   />
                 </div>
               )

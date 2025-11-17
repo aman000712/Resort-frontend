@@ -12,7 +12,6 @@ export default function About(){
             <Vision/>
             <ResortInfo/>
             <ChairmainWords/>
-            
             <ActivitiesHighlight/>
             <ResortFAQ/>
             
