@@ -5,7 +5,7 @@ import { GrLocationPin } from "react-icons/gr";
 import { BsFacebook } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
-import logo from '../../public/logo.jpg'
+import logo from "../../public/logo-removebg-preview.png";
 import Image from "next/image";
 import Link from "next/link";
 import { GoDotFill } from "react-icons/go";
@@ -24,29 +24,34 @@ export default function Footer() {
             <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
                 <div className="flex flex-col gap-4">
-                    <div className="flex gap-4 items-center ">
-                        <Image src={logo} alt="" className="w-16 h-16 " />
+                    <div className="flex gap-4 items-center">
+                        <Image src={logo} alt="" className="w-16 h-16" />
                         <div className="text-3xl font-semibold text-white">Aarambha</div>
                     </div>
                     <div className="text-gray-400 text-sm">
                         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
                     </div>
                     <div className="flex gap-4 mt-4 text-gray-300">
-                        <div className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full">
-
+                        <a
+                            href="https://www.facebook.com"
+                            className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full hover:bg-blue-600 transition-colors duration-300"
+                        >
                             <span><BsFacebook /></span>
-                        </div>
-                        <div className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full">
-
+                        </a>
+                        <a
+                            href="https://www.instagram.com"
+                            className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full hover:bg-pink-600 transition-colors duration-300"
+                        >
                             <span><FaInstagram /></span>
-                        </div>
-                        <div className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full">
-
+                        </a>
+                        <a
+                            href="https://www.twitter.com"
+                            className="w-8 h-8 bg-gray-600 flex items-center justify-center rounded-full hover:bg-blue-400 transition-colors duration-300"
+                        >
                             <span><FaTwitter /></span>
-                        </div>
+                        </a>
                     </div>
                 </div>
-
 
                 <div className="flex flex-col gap-4 items-center">
                     <div className="text-lg font-semibold text-white">Useful Links</div>
@@ -68,23 +73,23 @@ export default function Footer() {
                     <div className="text-lg font-semibold text-white">Have a Question?</div>
                     <div className="text-gray-400 text-sm">
                         <div className="flex gap-4 items-center">
-                            <div className="w-6 h-6 bg-gray-600 flex items-center justify-center rounded-full">
+                            <div className="w-6 h-6 bg-white flex items-center justify-center rounded-full">
 
-                                <span className="text-red-600"><GrLocationPin /></span>
+                                <span className="text-red-600 "><GrLocationPin /></span>
                             </div>
                             <div>Dhawaha Butwal-15</div>
                         </div>
                         <div className="flex gap-4 items-center mt-2">
-                            <div className="w-6 h-6 bg-gray-600 flex items-center justify-center rounded-full">
+                            <div className="w-6 h-6 bg-white flex items-center justify-center rounded-full">
 
-                                <span><IoCall /></span>
+                                <span className="text-red-600"><IoCall /></span>
                             </div>
                             <div>9865475235</div>
                         </div>
                         <div className="flex gap-4 items-center mt-2">
-                            <div className="w-6 h-6 bg-gray-600 flex items-center justify-center rounded-full">
+                            <div className="w-6 h-6 bg-white flex items-center justify-center rounded-full">
 
-                                <span><IoIosMailUnread /></span>
+                                <span className="text-red-600"><IoIosMailUnread /></span>
                             </div>
                             <div>info@yourdomain.com</div>
                         </div>

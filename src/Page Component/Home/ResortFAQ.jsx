@@ -31,12 +31,13 @@ export default function ResortFAQ() {
   ];
 
   return (
-    <div className="w-full h-[70vh] flex flex-col items-center justify-center px-4 bg-black/50 py-8">
+    <div className="w-full h-auto lg:h-[70vh] flex flex-col items-center justify-center px-4 sm:px-6 bg-black/50 py-8 sm:py-12 lg:py-8">
       <div className="max-w-6xl w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-8">
           
+        
           <div className="w-full lg:w-1/2 flex items-center justify-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-md lg:max-w-lg">
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
               <Image
                 src={bdy1}
                 alt="Resort Image"
@@ -51,33 +52,35 @@ export default function ResortFAQ() {
             </div>
           </div>
 
+          {/* FAQ Section */}
           <div className="w-full lg:w-1/2 flex items-center justify-center">
-            <div className="rounded-3xl p-6 md:p-8 text-white w-full max-w-lg">
-              <h1 className="text-2xl md:text-3xl font-bold mb-8 text-center font-serif text-white">
+            <div className="rounded-3xl p-4 sm:p-6 md:p-8 text-white w-full max-w-xs sm:max-w-sm md:max-w-lg">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8 text-center font-serif text-white">
                 Frequently Asked Questions
               </h1>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {faqs.map((faq, index) => (
                   <div
                     key={index}
-                    className="border-b border-white/30 pb-4 last:border-b-0"
+                    className="border-b border-white/30 pb-3 sm:pb-4 last:border-b-0"
                   >
                     <button
                       onClick={() =>
                         setOpenIndex(openIndex === index ? null : index)
                       }
-                      className="flex justify-between items-center w-full text-left font-semibold text-lg py-2 hover:text-red-300 transition-colors"
+                      className="flex justify-between items-start sm:items-center w-full text-left font-semibold text-sm sm:text-base md:text-lg py-1 sm:py-2 hover:text-red-300 transition-colors"
                     >
-                      <span className="text-white pr-4">{faq.question}</span>
+                      <span className="text-white pr-3 sm:pr-4 leading-tight sm:leading-normal">
+                        {faq.question}
+                      </span>
                       {openIndex === index ? (
-                        <IoChevronUp className="text-2xl text-red-400 flex-shrink-0" />
+                        <IoChevronUp className="text-xl sm:text-2xl text-red-400 flex-shrink-0 mt-1 sm:mt-0" />
                       ) : (
-                        <IoChevronDown className="text-2xl text-red-400 flex-shrink-0" />
+                        <IoChevronDown className="text-xl sm:text-2xl text-red-400 flex-shrink-0 mt-1 sm:mt-0" />
                       )}
                     </button>
 
-               
                     <div
                       className={`transition-all duration-500 ease-in-out overflow-hidden ${
                         openIndex === index
@@ -85,12 +88,13 @@ export default function ResortFAQ() {
                           : "max-h-0 opacity-0"
                       }`}
                     >
-                      <p className="text-white/80 text-base">{faq.answer}</p>
+                      <p className="text-white/80 text-xs sm:text-sm md:text-base leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
-
             </div>
           </div>
 

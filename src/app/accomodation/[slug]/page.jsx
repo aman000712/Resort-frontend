@@ -1,9 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosStar } from "react-icons/io";
-import { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaCalendar,
@@ -29,25 +27,13 @@ import * as Yup from "yup";
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { motion } from "framer-motion";
-
 import room1 from "../../../../public/room1.jpg";
 import room2 from "../../../../public/room2.jpg";
 import room3 from "../../../../public/room3.jpg";
 import room4 from "../../../../public/room1.jpg";
 
 const images = [
-  {
-    "image": room1
-  },
-  {
-    "image": room2
-  },
-  {
-    "image": room3
-  },
-  {
-    "image": room4
-  }
+  { "image": room1 }, { "image": room2 }, { "image": room3 }, { "image": room4 }
   ,]
 
 const roomData = {
@@ -103,6 +89,7 @@ const amenities = [
 
 const reviews = [
   {
+    image: room1,
     id: 1,
     name: "Sarah Johnson",
     rating: 5,
@@ -111,6 +98,7 @@ const reviews = [
       "Absolutely stunning room! The attention to detail and luxury amenities made our stay unforgettable. Will definitely come back!",
   },
   {
+    image: room2,
     id: 2,
     name: "Michael Chen",
     rating: 4,
@@ -119,6 +107,16 @@ const reviews = [
       "Great experience overall. The room was spacious and clean. Service was excellent. Minor issue with WiFi but was resolved quickly.",
   },
   {
+    image: room3,
+    id: 3,
+    name: "Emily Davis",
+    rating: 5,
+    date: "2024-01-08",
+    comment:
+      "Perfect getaway! The bed was incredibly comfortable and the view was breathtaking. Highly recommend this room for couples.",
+  },
+  {
+    image: room3,
     id: 3,
     name: "Emily Davis",
     rating: 5,
@@ -144,15 +142,8 @@ const handleSubmit = (values) => {
 };
 
 export default function RoomPage({ params }) {
-
-  const reviewItems = [...reviews, ...reviews];
-
-
-
   const { slug } = params;
   const room = roomData[slug];
-
-
 
   if (!room) {
     return (
@@ -169,14 +160,6 @@ export default function RoomPage({ params }) {
       </div>
     );
   }
-
-
-  const renderStars = (rating) => {
-    const full = Math.floor(rating);
-    return Array.from({ length: 5 }, (_, i) => (
-      <FaStar key={i} className={i < full ? "text-yellow-400" : "text-gray-300"} />
-    ));
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -209,16 +192,13 @@ export default function RoomPage({ params }) {
                   <Image
                     src={val.image}
                     alt="here"
-                    className={`object-cover ${i === 0 || i === 1 || i === 2 ? "w-98 h-98" : ""} ${i === 3  ? "w-10" : ""} `}
+                    className={`object-cover ${i === 0 || i === 1 || i === 2 ? "w-98 h-98" : ""} ${i === 3 ? "w-10" : ""} `}
                   />
                 </div>
               )
             })
           }
         </div>
-
-       
-
         <section className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
 
           <div className="bg-white rounded-lg p-6  ">
@@ -258,7 +238,6 @@ export default function RoomPage({ params }) {
             </div>
           </div>
 
-
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <h3 className="text-xl font-semibold text-red-800 mb-4">
               Book Your Stay
@@ -289,7 +268,7 @@ export default function RoomPage({ params }) {
                       type="text"
                       name="FullName"
                       placeholder="Enter your full name"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                     />
                     <ErrorMessage
                       name="FullName"
@@ -307,7 +286,7 @@ export default function RoomPage({ params }) {
                       type="email"
                       name="Email"
                       placeholder="Enter your email"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                     />
                     <ErrorMessage
                       name="Email"
@@ -324,7 +303,7 @@ export default function RoomPage({ params }) {
                       type="text"
                       name="Phone"
                       placeholder="Enter your phone number"
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                     />
                     <ErrorMessage
                       name="Phone"
@@ -343,7 +322,7 @@ export default function RoomPage({ params }) {
                       <Field
                         type="date"
                         name="CheckIn"
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                       />
                       <ErrorMessage
                         name="CheckIn"
@@ -360,7 +339,7 @@ export default function RoomPage({ params }) {
                       <Field
                         type="date"
                         name="CheckOut"
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                       />
                       <ErrorMessage
                         name="CheckOut"
@@ -380,7 +359,7 @@ export default function RoomPage({ params }) {
                         type="number"
                         name="Adults"
                         min={1}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                       />
                     </div>
 
@@ -393,7 +372,7 @@ export default function RoomPage({ params }) {
                         type="number"
                         name="Children"
                         min={0}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-red-800 focus:border-red-800"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 "
                       />
                     </div>
                   </div>
@@ -410,104 +389,106 @@ export default function RoomPage({ params }) {
           </div>
         </section>
 
-
-        <section className="mb-20">
-          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 shadow-sm">
-            <h2 className="text-3xl font-bold text-red-800 mb-8">Amenities & Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {amenities.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 group">
-                  <span className="text-red-600 text-xl group-hover:scale-110 transition-transform duration-200">{item.icon}</span>
-                  <span className="text-gray-700 font-medium">{item.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-        <section className="mb-20">
-          <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-8 shadow-sm">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-bold text-gray-900">Guest Reviews</h2>
-              <div className="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-full">
-                <IoIosStar className="text-yellow-400 text-xl" />
-                <span className="font-bold text-gray-900">{room.rating}</span>
-                <span className="text-gray-600">({reviews.length} reviews)</span>
+        <section className=" py-12">
+          <h2 className="text-3xl font-bold text-red-800 mb-8">Amenities & Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {amenities.map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 group">
+                <span className="text-red-600 text-xl group-hover:scale-110 transition-transform duration-200">{item.icon}</span>
+                <span className="text-gray-700 font-medium">{item.name}</span>
               </div>
-            </div>
-            <div className="space-y-6">
-              {reviews.map((review) => (
-                <div key={review.id} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-red-100 to-red-200 rounded-full flex items-center justify-center shadow-sm">
-                      <FaUser className="text-red-600 text-xl" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold text-gray-900 text-lg">{review.name}</h3>
-                        <span className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        <div className="flex">{renderStars(review.rating)}</div>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed text-sm">{review.comment}</p>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </section>
 
-
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">You May Also Like</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Discover other luxurious accommodations that might suit your preferences
-            </p>
+        <section className=" flex flex-col  py-12">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-red-800">Guest Reviews</h2>
+            <div className="flex items-center  bg-yellow-50 px-4 py-2 rounded-full">
+              <IoIosStar className="text-yellow-400 text-xl" />
+              <span className="font-bold text-gray-900">{room.rating}</span>
+              <span className="text-gray-600">({reviews.length} reviews)</span>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(roomData)
-              .filter(([key]) => key !== slug)
-              .map(([key, r]) => (
-                <div key={key} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={room4}
-                      alt={r.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 400px"
-                    />
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                      <span className="font-bold text-red-600">{r.price}</span>
-                    </div>
+          <motion.div
+            className="grid grid-cols-2 gap-8 items-center justify-center place-items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {reviews.map((review, index) => (
+              <motion.div
+                key={review.id}
+                className="bg-gray-100 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-red-100 to-red-200 rounded-full flex items-center justify-center shadow-sm">
+                    <FaUser className="text-red-600 text-xl" />
                   </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-start gap-4 mb-3">
-                      <h3 className="text-xl font-bold text-gray-900">{r.title}</h3>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-gray-900 text-lg">{review.name}</h3>
+                      <span className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</span>
                     </div>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">{r.description}</p>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-sm text-gray-500 font-medium">{r.size} • {r.guests}</span>
-                      <span className="flex items-center gap-1 text-sm font-semibold">
-                        <IoIosStar className="text-yellow-400" />
-                        {r.rating}
-                      </span>
+                    <div className="flex items-center gap-2 mt-1">
+                      <div className="flex">
+                        <IoIosStar className="text-yellow-400 text-xl" />
+                        <IoIosStar className="text-yellow-400 text-xl" />
+                        <IoIosStar className="text-yellow-400 text-xl" />
+                        <IoIosStar className="text-yellow-400 text-xl" />
+                        <IoIosStar className="text-yellow-400 text-xl" />
+                      </div>
                     </div>
-                    <Link
-                      href={`/accomodation/${key}`}
-                      className="block w-full text-center bg-red-800 text-white py-3 rounded-xl font-semibold hover:bg-red-900 transition-colors duration-200"
-                    >
-                      View Details
-                    </Link>
                   </div>
                 </div>
-              ))}
-          </div>
+                <p className="text-gray-600 leading-relaxed text-sm">{review.comment}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </section>
+
+        <div className="py-12">
+          <h2 className="text-4xl font-bold text-red-800 mb-4">You May Also Like</h2></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(roomData)
+            .filter(([key]) => key !== slug)
+            .map(([key, r]) => (
+              <div key={key} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={room4}
+                    alt={r.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="font-bold text-red-600">{r.price}</span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start gap-4 mb-3">
+                    <h3 className="text-xl font-bold text-gray-900">{r.title}</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{r.description}</p>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-sm text-gray-500 font-medium">{r.size} • {r.guests}</span>
+
+                  </div>
+                  <Link
+                    href={`/accomodation/${key}`}
+                    className="block w-full text-center bg-red-800 text-white py-3 rounded-xl font-semibold hover:bg-red-900 transition-colors duration-200"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            ))}
+        </div>
+
       </div>
     </div>
   );

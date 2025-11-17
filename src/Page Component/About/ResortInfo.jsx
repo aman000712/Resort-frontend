@@ -19,32 +19,34 @@ export default function ResortInfo() {
     { icon: <FaCoffee />, name: "Tea/Coffee Maker" },
     { icon: <FaPhone/>, name: "Telephone" },
     { icon: <TbAirConditioning />, name: "Air Conditioning" },
-    { icon: <TbClock24 c />, name: "24-Hour Guest Reception" },
+    { icon: <TbClock24 />, name: "24-Hour Guest Reception" },
   ];
 
   return (
-    <section className="bg-white py-20 flex flex-col items-center justify-center gap-14">
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 w-10/12 max-w-6xl">
+    <section className="bg-white py-10 lg:py-20 flex flex-col items-center justify-center gap-10 lg:gap-14 px-4">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-8 lg:gap-10 w-full max-w-6xl">
     
-        <div className="relative w-full h-[30vh] md:h-auto">
+       
+        <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh]">
           <Image
             src={image}
             alt="Aarambha Hotel View"
-            className="object-cover h-[70vh] rounded-2xl shadow-lg"
+            fill
+            className="object-cover rounded-2xl shadow-lg"
             priority
           />
         </div>
 
-        {/* Text Content */}
-        <div className="flex flex-col gap-6 justify-center p-6">
+      
+        <div className="flex flex-col gap-4 lg:gap-6 justify-center p-4 lg:p-6">
           <h2
-            className="text-5xl text-red-800"
+            className="text-3xl sm:text-4xl lg:text-5xl text-red-800"
             style={{ fontFamily: "Times New Roman, Times, serif" }}
           >
             Aarambha Hotel
           </h2>
 
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
             Nestled amidst the breathtaking beauty of nature, Arambha Resort is a sanctuary
             for those seeking both relaxation and adventure. Located in the heart of Butwal,
             we offer a unique blend of modern comfort and traditional charm. From the moment
@@ -59,13 +61,15 @@ export default function ResortInfo() {
         </div>
       </div>
 
-
-      <div className="w-10/12 max-w-6xl">
-        <h3 className="text-3xl font-semibold mb-8 text-red-800">Amenities</h3>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+     
+      <div className="w-full max-w-6xl">
+        <h3 className="text-2xl sm:text-3xl font-semibold mb-6 lg:mb-8 text-red-800 text-center sm:text-left">
+          Amenities
+        </h3>
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 text-gray-700">
           {amenities.map((val, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <span className="text-xl text-red-800">{val.icon}</span>
+            <div key={i} className="flex items-center gap-3 text-sm sm:text-base">
+              <span className="text-lg sm:text-xl text-red-800">{val.icon}</span>
               <span>{val.name}</span>
             </div>
           ))}
