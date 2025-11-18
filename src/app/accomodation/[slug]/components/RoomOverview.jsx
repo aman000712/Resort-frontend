@@ -13,44 +13,50 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export default function Reviews({ reviews }) {
   return (
     <motion.div
-      className="flex flex-col gap-6"
+      className="w-full max-w-4xl mx-auto"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      {reviews.map((rev, i) => (
-        <motion.div
-          key={i}
-          className="flex gap-4 p-4 w-11/12 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-200"
-          variants={itemVariants}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <div className="flex-shrink-0">
-            <Image
-              src={rev.image}
-              alt={rev.name}
-              width={64}
-              height={64}
-              className="rounded-full object-cover"
-            />
-          </div>
-          <div className="flex flex-col justify-between">
-            <div>
-              <p className="text-gray-900 font-semibold text-lg">{rev.name}</p>
-              <p className="text-yellow-500 font-medium mt-1">{rev.rating} ★</p>
+      <div className="flex flex-col gap-8">
+        {reviews.map((rev, i) => (
+          <motion.div
+            key={i}
+            className="bg-white rounded-lg"
+            variants={itemVariants}
+          >
+            <div className="flex flex-col gap-2">
+              {/* Name and Education */}
+              <div>
+                <h3 className="text-gray-900 font-bold text-lg"># {rev.name}</h3>
+                <p className="text-gray-600 font-medium text-sm">{rev.education}</p>
+              </div>
+              
+              {/* Review Content */}
+              <p className="text-gray-700 leading-relaxed text-base">
+                {rev.comment}
+              </p>
+              
+              {/* Read More Link */}
+              <button className="text-blue-600 font-medium text-sm hover:text-blue-800 transition-colors duration-200 self-start">
+                Read More
+              </button>
             </div>
-            <p className="text-gray-600 mt-2">{rev.comment}</p>
-          </div>
-        </motion.div>
-      ))}
+            
+            {/* Separator - only show if not last item */}
+            {i < reviews.length - 1 && (
+              <div className="border-t border-gray-300 mt-6"></div>
+            )}
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 }
