@@ -5,7 +5,10 @@ import room1 from "../../../../public/room1.jpg";
 import room2 from "../../../../public/room2.jpg";
 import room3 from "../../../../public/room3.jpg";
 import room4 from "../../../../public/room1.jpg";
-
+import person1 from "../../../../public/Person1.jpg";
+import person2 from "../../../../public/Person2.jpg";
+import person3 from "../../../../public/Person4.jpg";
+import person4 from "../../../../public/Person5.jpg";
 import Banner from "./components/Banner";
 import ImageGallery from "./components/ImageGallery";
 
@@ -61,7 +64,7 @@ Perfect for a peaceful getaway, our rooms ensure a memorable stay for every gues
 
 const reviews = [
   {
-    image: room1,
+    image: person1,
     id: 1,
     name: "Sarah Johnson",
     rating: 5,
@@ -69,7 +72,7 @@ const reviews = [
     comment: "Absolutely stunning room!"
   },
   {
-    image: room2,
+    image:person2,
     id: 2,
     name: "Michael Chen",
     rating: 4,
@@ -77,7 +80,7 @@ const reviews = [
     comment: "Great experience overall."
   },
   {
-    image: room1,
+    image: person3,
     id: 1,
     name: "Sarah Johnson",
     rating: 5,
@@ -85,7 +88,7 @@ const reviews = [
     comment: "Absolutely stunning room!"
   },
   {
-    image: room2,
+    image: person4,
     id: 2,
     name: "Michael Chen",
     rating: 4,
@@ -93,7 +96,7 @@ const reviews = [
     comment: "Great experience overall."
   },
    {
-    image: room1,
+    image: person1,
     id: 1,
     name: "Sarah Johnson",
     rating: 5,
@@ -101,7 +104,7 @@ const reviews = [
     comment: "Absolutely stunning room!"
   },
   {
-    image: room2,
+    image: person4,
     id: 2,
     name: "Michael Chen",
     rating: 4,
