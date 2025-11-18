@@ -65,51 +65,93 @@ const eventsData = {
 
 export default function EventPage({ params }) {
   const { slug } = params;
-  const events = eventsData[slug];
+  const event = eventsData[slug];
 
-  if (!events) {
+  if (!event) {
     return (
-      <div className="text-center text-xl py-20 text-gray-600">
-        Events not found.
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
+        <div className="text-center bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+          <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">❌</span>
+          </div>
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">Event Not Found</h1>
+          <p className="text-gray-600 mb-6">The event you're looking for doesn't exist.</p>
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors"
+          >
+            ← Back to Home
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#0B0C28] flex flex-col items-center pt-28 pb-12 px-6 lg:px-2 ">
-      <div className="w-11/12  bg-white shadow-lg rounded-xl overflow-hidden">
-        <div className="relative w-full bg-red-200 h-96">
-          <Image
-            src={events.image}
-            alt={events.title}
-            fill
-            className="object-cover"
-          />
-          <span className="absolute top-4 right-4 bg-[#0B0C28]/70 text-white text-sm font-semibold px-3 py-1 rounded-full">
-            {events.category}
-          </span>
+    <div className="min-h-screen bg-gradient-to-br from-gray-200 to-red-300 py-30 px-4">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Event Content Card */}
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            {/* Image Section */}
+            <div className="lg:w-1/2 relative">
+              <div className="aspect-[4/3] lg:aspect-auto lg:h-full">
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Category Badge */}
+              <span className={`absolute top-4 right-4 text-white text-sm font-semibold px-3 py-1 rounded-full ${
+                event.category === "Current" ? "bg-green-600" :
+                event.category === "Upcoming" ? "bg-blue-600" :
+                "bg-gray-600"
+              }`}>
+                {event.category}
+              </span>
+              {/* Gradient overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent lg:hidden" />
+            </div>
+
+            {/* Content Section */}
+            <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col">
+              {/* Meta Information */}
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                <span>{event.date}</span>
+                <span>•</span>
+                <span>By {event.author}</span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                {event.title}
+              </h1>
+
+              {/* Content */}
+              <div className="flex-grow">
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line mb-6">
+                  {event.content}
+                </p>
+              </div>
+
+            
+            </div>
+          </div>
         </div>
 
-        <div className="p-8 flex flex-col gap-4">
-          <h1 className="text-3xl font-bold text-[#0B0C28]">{events.title}</h1>
-          <div className="text-gray-500 text-sm flex justify-between">
-            <span>{events.author}</span>
-            <span>{events.date}</span>
-          </div>
-          <hr className="my-4 border-gray-200" />
-
-          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-            {events.content}
-          </p>
-
-          <div className="mt-8">
-            <Link
-              href="/events"
-              className="inline-block bg-[#0B0C28] text-white px-6 py-2 rounded-lg hover:bg-[#0B0C28]/80 transition"
-            >
-              ← Back to Events
-            </Link>
-          </div>
+        {/* Related Actions */}
+        <div className="flex justify-between items-center mt-8">
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            ← All Events
+          </Link>
+         
         </div>
       </div>
     </div>
