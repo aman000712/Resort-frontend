@@ -11,7 +11,7 @@ export default function AboutBanner() {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white gap-4 px-5">
         <h1 className="text-5xl md:text-6xl font-bold">Gallery</h1>
         <p className="max-w-lg text-sm md:text-base">
-          For over a century, we've been committed to academic excellence, innovation, and student success.
+          Step into a visual journey of beauty, comfort, and unforgettable memories — captured from every corner of our resort.
         </p>
       </div>
 

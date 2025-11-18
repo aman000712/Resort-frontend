@@ -32,7 +32,8 @@ export default function ResortInfo() {
             src={image}
             alt="Aarambha Hotel View"
             fill
-            className="object-cover rounded-2xl shadow-lg"
+             className="object-cover rounded-2xl shadow-lg transition-all duration-700 ease-in-out 
+               group-hover:scale-110 group-hover:brightness-75"
             priority
           />
         </div>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Great_Vibes } from "next/font/google";
-
+import { RxCross2 } from "react-icons/rx";
 import img1 from "../../../public/nature.jpg";
 import img2 from "../../../public/gym.jpg";
 import img3 from "../../../public/culture.jpg";
@@ -50,7 +50,7 @@ export default function ActivitiesHighlight() {
 
   return (
     <div className="w-full bg-white min-h-screen flex gap-10 flex-col items-center justify-center py-16">
-      {/* Header */}
+    
       <div className="w-full relative flex flex-col items-center justify-center mb-12">
         <h1
           className={`${greatVibes.className} lg:text-7xl text-5xl absolute text-red-800 -top-6 lg:-top-10 italic`}
@@ -108,7 +108,7 @@ export default function ActivitiesHighlight() {
                 onClick={() => setSelectedActivity(null)}
                 className="absolute top-4 right-4 cursor-pointer text-gray-500 hover:text-red-600 text-2xl"
               >
-                ✕
+                <RxCross2 />
               </button>
 
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
